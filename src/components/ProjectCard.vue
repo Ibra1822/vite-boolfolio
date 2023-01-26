@@ -9,9 +9,13 @@ export default {
 <template>
   <div class="card">
     <div class="center">
-      <h2>{{ projects.name }}</h2>
-      <h2>{{ projects.client_name }}</h2>
-      <p>{{ projects.summary }}</p>
+      <h2>
+        Name: <span>{{ projects.name }}</span>
+      </h2>
+      <h2>
+        Client: <span> {{ projects.client_name }} </span>
+      </h2>
+      <p>Summary: {{ projects.summary }}</p>
     </div>
   </div>
 </template>
@@ -29,7 +33,10 @@ export default {
   box-shadow: 0px 0px 15px #fff;
   border-radius: 10px;
   h2 {
-    text-shadow: 0px 0px 10px #fff;
+    span {
+      display: block;
+      text-shadow: 0px 0px 10px #fff;
+    }
   }
 }
 </style>
