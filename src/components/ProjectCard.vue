@@ -15,7 +15,9 @@ export default {
       <h2>
         Client: <span> {{ projects.client_name }} </span>
       </h2>
-      <p>Summary: {{ projects.summary }}</p>
+      <p>
+        Summary: <span>{{ projects.summary }} </span>
+      </p>
     </div>
   </div>
 </template>
@@ -32,7 +34,8 @@ export default {
   padding: 10px;
   box-shadow: 0px 0px 15px #fff;
   border-radius: 10px;
-  h2 {
+  h2,
+  p {
     span {
       display: block;
       text-shadow: 0px 0px 10px #fff;
