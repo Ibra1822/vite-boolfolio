@@ -2,43 +2,38 @@
 export default {
   name: "ProjectCard",
   props: {
-    projects: Array,
+    project: Array,
   },
 };
 </script>
 <template>
-  <div class="card">
-    <div class="center">
-      <h2>
-        Name: <span>{{ projects.name }}</span>
-      </h2>
-      <h2>
-        Client: <span> {{ projects.client_name }} </span>
-      </h2>
-      <p>
-        Summary: <span>{{ projects.summary }} </span>
-      </p>
-    </div>
+  <div class="container">
+    <router-link :to="{ name: 'dettagli', params: { slug: project.slug } }">
+      <h3>{{ project.name }}</h3>
+    </router-link>
+    <h3>{{ project.client_name }}</h3>
+    <p>{{ project.summary }}</p>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.card {
-  border: 1px solid #fff;
-  width: calc(100% / 4);
-  aspect-ratio: 1/1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 10px;
-  box-shadow: 0px 0px 15px #fff;
+.container {
+  width: 85%;
+  margin: 35px auto;
+  border: 1px solid #000;
   border-radius: 10px;
-  h2,
+  padding: 30px;
+  box-shadow: inset 0px 0px 10px lightslategrey;
+  h3,
   p {
-    span {
-      display: block;
-      text-shadow: 0px 0px 10px #fff;
+    margin: 20px;
+  }
+  a {
+    text-decoration: none;
+    text-align: center;
+    color: lightslategray;
+    &:hover {
+      text-decoration: underline;
     }
   }
 }
