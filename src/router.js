@@ -4,6 +4,7 @@ import home from "./pages/home.vue";
 import about from "./pages/about.vue";
 import projects from "./pages/projects.vue";
 import DetailProject from "./pages/DetailProject.vue";
+import error404 from "./pages/error404.vue";
 const router = createRouter({
   history: createWebHashHistory(),
 
@@ -27,6 +28,10 @@ const router = createRouter({
       path: "/dettagli-progetti/:slug",
       name: "dettagli",
       component: DetailProject,
+    },
+    {
+      path: "/:pathMatch(.*)*",
+      component: error404,
     },
   ],
 });
